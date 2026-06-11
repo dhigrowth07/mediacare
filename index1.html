@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Medicare Systems | Premium Healthcare Infrastructure &amp; Equipment</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#404750",
+                        "surface-dim": "#d8dadc",
+                        "tertiary": "#444c53",
+                        "on-secondary-fixed-variant": "#004f55",
+                        "tertiary-fixed": "#dbe3ec",
+                        "outline-variant": "#c0c7d1",
+                        "on-secondary-container": "#006d76",
+                        "secondary-fixed": "#87f3ff",
+                        "surface-container-low": "#f2f4f6",
+                        "on-tertiary-container": "#d9e1ea",
+                        "on-tertiary-fixed": "#151c23",
+                        "on-primary-fixed-variant": "#004a78",
+                        "primary-fixed-dim": "#99cbff",
+                        "surface": "#f7f9fb",
+                        "error-container": "#ffdad6",
+                        "on-background": "#191c1e",
+                        "inverse-primary": "#99cbff",
+                        "background": "#f7f9fb",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "tertiary-container": "#5c646b",
+                        "inverse-on-surface": "#eff1f3",
+                        "surface-bright": "#f7f9fb",
+                        "on-error-container": "#93000a",
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#e6e8ea",
+                        "surface-variant": "#e0e3e5",
+                        "primary-container": "#0067a5",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#40484f",
+                        "surface-container-highest": "#e0e3e5",
+                        "error": "#ba1a1a",
+                        "secondary": "#006971",
+                        "inverse-surface": "#2d3133",
+                        "primary-fixed": "#cfe5ff",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed": "#001d34",
+                        "on-surface": "#191c1e",
+                        "on-secondary-fixed": "#001f23",
+                        "surface-container": "#eceef0",
+                        "secondary-fixed-dim": "#59d8e5",
+                        "surface-tint": "#00629e",
+                        "secondary-container": "#76f1ff",
+                        "outline": "#717881",
+                        "on-primary-container": "#cae2ff",
+                        "primary": "#004e7f",
+                        "tertiary-fixed-dim": "#bfc7d0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "max-width": "1440px",
+                        "gutter": "24px",
+                        "unit": "4px",
+                        "margin-tablet": "32px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "caption": ["Inter"],
+                        "display-lg-mobile": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "display-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #f7f9fb; color: #191c1e; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(0, 78, 127, 0.95) 0%, rgba(0, 105, 113, 0.8) 100%);
+        }
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .reveal-up.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden">
+<!-- TopNavBar Shell -->
+<nav class="fixed top-0 w-full z-50 bg-surface/95 dark:bg-surface-container/95 backdrop-blur-md border-b border-outline-variant/20 shadow-sm transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center h-20 px-8 lg:px-16 mx-auto w-full max-w-max-width">
+<div class="flex items-center gap-3">
+<img alt="Medicare Systems Logo" class="h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrPuz5MrrRq6rVG8V9RuiLJPXuBZVO9dgraGqROwaif4hLxbOSWEPCYEgn6EMB0OBs-BtoNz8QRUGuBbG0BppcgjTUxNJ_nqppusoy7Pk-0zpQPijY428wlLS9w8bjPavNoyNXTbMqd5faPT5UFo4pNwlEUPxZau2yaWqQqb-CnXyGE9MdFrcHEAaKUbHVt3xnezNhG4ogunpgR6FsWfUh9rDsKT1LsEsLBdApFe3trvXoPyKVmXUtTFmDPHHge2FLc32hXzt4Mpo"/>
+<span class="font-headline-md text-headline-md font-bold text-primary">Medicare Systems</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#services">Services</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#products">Products</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#about">Innovation</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#trust">Trust</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#projects">Projects</a>
+</div>
+<button class="bg-secondary text-on-secondary px-6 py-2.5 rounded-lg font-label-md text-label-md hover:bg-secondary/90 transition-all shadow-md">
+                Request Quote
+            </button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative h-screen min-h-[700px] flex items-center overflow-hidden pt-20">
+<div class="absolute inset-0 z-0">
+<img alt="" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAlWcm_kmblhLaSGeo5bEotueRmeITPaFf1hlJlP1udLrkS8gNEq_gWvPKptP6Q_MutK-HBi42q35GlAbKD7M-mvnJBuO_2MOGxVYBl6lZV41BI7kEgyFKbRbOm0sXwvXbGXY0j5XW4FTHJfpXfY7hDoULr7toEf1PfYkxdkDJ_YOH4KyMarY4NED185sPiOzYY2A3o2HR7PlwmrhCCXmAgUWZRQhMSEAUT4AoLkrEu1OaPmTpA5jTsTaC3exy6nlNbZpF-dx8QfM"/>
+<div class="absolute inset-0 hero-gradient"></div>
+</div>
+<div class="relative z-10 w-full px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="reveal-up active">
+<h1 class="font-display-lg text-display-lg text-white mb-6 leading-tight">
+                    Complete Medical Equipment &amp; Healthcare Infrastructure Solutions
+                </h1>
+<p class="font-body-lg text-body-lg text-white/90 mb-10 max-w-xl">
+                    Empowering healthcare institutions with 20+ years of expertise in precision sales, expert installation, and seamless maintenance of mission-critical systems.
+                </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-secondary text-on-secondary px-8 py-4 rounded-lg font-label-md text-label-md hover:brightness-110 transition-all shadow-xl flex items-center gap-2">
+                        Get a Free Consultation <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="border-2 border-white/40 text-white px-8 py-4 rounded-lg font-label-md text-label-md hover:bg-white/10 transition-all backdrop-blur-sm">
+                        Request a Quote
+                    </button>
+</div>
+</div>
+<div class="hidden lg:block reveal-up active delay-300">
+<div class="glass-card p-8 rounded-2xl shadow-2xl space-y-6 border-l-4 border-secondary">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-primary">Precision Standards</p>
+<p class="font-body-md text-body-md text-on-surface-variant">CE &amp; ISO Certified Inventory</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">engineering</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-secondary">Expert Engineering</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Installation in &lt; 48 Hours</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-tertiary/10 rounded-full flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined">support_agent</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-tertiary">Global Support</p>
+<p class="font-body-md text-body-md text-on-surface-variant">24/7 After-Sales Maintenance</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Us -->
+<section class="py-24 bg-white" id="about">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="relative reveal-up">
+<div class="absolute -top-10 -left-10 w-32 h-32 bg-secondary/5 rounded-full blur-3xl"></div>
+<img alt="Medical Professionals" class="rounded-2xl shadow-2xl relative z-10 w-full object-cover aspect-[4/3]" data-alt="A professional team of healthcare specialists in a bright modern hospital corridor collaborating on a digital tablet. The scene is bright with high-key natural lighting and a clinical blue and white color palette. The atmosphere is professional, efficient, and technologically advanced, echoing premium healthcare standards." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDV-oRVgbo3kNi4-4QIRWxO44A5FE-pTkYd9mNarjlxkFHM_OUMynnbvd_sIA9fRBSBbo29xyAAnvZTud6nPb9pTvTntalCXYfpMcfVx_JBJCnGTCLrZ7MAcJN_yBtQIzjW9axgvwySHW3pJavwyT4NpLZ65uF3fD1cO2fA12Q_YhPeG7lQK-LsRKj5Hfprg07Um7BMz0o4WrHTYoqvhYtoXeVWNdsO83rXkRZ-eY1eec6xQITsudeSqlGpq7uajURIF1eDkvuOxrs"/>
+<div class="absolute -bottom-6 -right-6 bg-primary p-8 rounded-xl text-white shadow-xl z-20">
+<p class="text-4xl font-bold mb-1">20+</p>
+<p class="text-sm font-label-md opacity-80">Years of Clinical Excellence</p>
+</div>
+</div>
+<div class="reveal-up">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">Trusted Healthcare Technology Partner</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 leading-relaxed">
+                    With two decades of industry leadership, Medicare Systems stands as a pillar of reliability in the healthcare infrastructure landscape. We don't just sell equipment; we engineer end-to-end environments where precision meets patient care.
+                </p>
+<ul class="space-y-4 mb-10">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary font-bold">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Experience: Decades of domain expertise</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary font-bold">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Quality: Highest clinical grade certifications</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary font-bold">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Support: 24/7 priority maintenance response</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary font-bold">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Innovation: Future-ready smart ICU/OT solutions</span>
+</li>
+</ul>
+<button class="text-primary font-label-md text-label-md flex items-center gap-2 hover:translate-x-2 transition-transform">
+                    Learn more about our heritage <span class="material-symbols-outlined">arrow_right_alt</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Services Grid -->
+<section class="py-24 bg-surface-container-low" id="services">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-16 reveal-up">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-widest">Our Expertise</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mt-4">Comprehensive Healthcare Solutions</h2>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+<!-- Card Component -->
+<script>
+                    const services = [
+                        { icon: 'shopping_cart', title: 'Medical Equipment Sales' },
+                        { icon: 'build', title: 'Service & Maintenance' },
+                        { icon: 'medical_services', title: 'OT Solutions' },
+                        { icon: 'view_module', title: 'Modular OT' },
+                        { icon: 'monitor_heart', title: 'ICU Solutions' },
+                        { icon: 'child_care', title: 'NICU Solutions' },
+                        { icon: 'bed', title: 'Hospital Furniture' },
+                        { icon: 'layers', title: 'Vinyl Flooring' },
+                        { icon: 'architecture', title: 'Infrastructure Consulting' },
+                        { icon: 'key', title: 'Equipment Rental' }
+                    ];
+                    
+                    document.write(services.map(service => `
+                        <div class="service-card group bg-white p-8 rounded-xl border border-outline-variant/30 hover:border-secondary shadow-sm hover:shadow-xl transition-all duration-300 reveal-up">
+                            <div class="service-icon w-14 h-14 bg-surface-container rounded-lg flex items-center justify-center mb-6 text-primary group-hover:bg-secondary group-hover:text-white transition-all">
+                                <span class="material-symbols-outlined text-3xl">${service.icon}</span>
+                            </div>
+                            <h3 class="font-label-md text-label-md text-primary mb-2">${service.title}</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant/80 text-sm leading-snug">Reliable implementation with clinical precision.</p>
+                        </div>
+                    `).join(''));
+                </script>
+</div>
+</div>
+</section>
+<!-- Product Categories (Bento Style) -->
+<section class="py-24 bg-white overflow-hidden" id="products">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 reveal-up">
+<div>
+<span class="font-label-md text-label-md text-secondary uppercase tracking-widest">Equipment Catalog</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mt-4">Medical Equipment &amp; Healthcare Products</h2>
+</div>
+<button class="mt-6 md:mt-0 border border-primary text-primary px-6 py-3 rounded-lg font-label-md hover:bg-primary/5 transition-all">View All Products</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 h-[800px] md:h-[600px]">
+<div class="md:col-span-2 group relative overflow-hidden rounded-2xl bg-surface-dim reveal-up">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Close up shot of a high-tech hospital ICU room featuring advanced physiological monitors and a modern medical ventilator system. The lighting is focused and professional, highlighting the metallic and glass textures of the equipment. A soft blue ambient glow creates a sterile yet sophisticated atmosphere consistent with premium healthcare environments." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5s48DvcFZULs9JopnDHdG9hQ6XEIK-l4tJ1sS90lIu2OoEw0Q86OSKJqYQ18pNxP8ETEuzwJYMeWYF95kN4c227BuFl0l8v9UNOYTLAxDU9vlYBMqq1gP4FsQ8Ugw9L6b0tj9DDve5ceEQpYVCxagnaCVX874-jQc93UjX2yjfULXqemHr_uy3QO92PCAeI9FdAKFvlz9gLUedyGUtOli_v7ATbypMorp3xgYRayoQ2N4-7GKjohBjfZ9Rq-9mgfXPPurDif5Gb0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-8 flex flex-col justify-end">
+<h3 class="text-white font-headline-md text-headline-md mb-2">Advanced ICU Systems</h3>
+<p class="text-white/80 font-body-md max-w-md">Ventilators, bedside monitors, and smart infusion systems for critical care excellence.</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-2xl bg-surface-dim reveal-up">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A brightly lit, state-of-the-art operating theater with modern surgical lights and stainless steel medical workstations. The room features professional teal and white surfaces, conveying a high level of hygiene and technological advancement. The lighting is shadowless and intense, emphasizing the precision-oriented environment of modern surgery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPxtz30DxUzgq0GbmJRfncHMeo1vEE1ow9_DDBMc03s6atEQqXcRg0jJUz-yf59YXqRfl8lRRjsvj0gEpn9npjaVC_3Sf898BNtEVaJZneBBBhCxAizAh4P7oS2udOeP9mmTA0QXuIRbunJeO_O1TTv16oLmX6QpMu_vUq9jCFFpYX1I0p14Y7Ix3bGCRuHeabl3zQFJV-agZlnZI7yXFCvf6Hr0VsPln6Mt4BflJTPLU6vhESXoqzprjZWJDvwcEIG0MWV1nZp40"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-8 flex flex-col justify-end">
+<h3 class="text-white font-headline-md text-headline-md mb-2">OT &amp; Surgical</h3>
+<p class="text-white/80 font-body-md">Shadowless lights, tables, and modular walls.</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-2xl bg-surface-dim reveal-up">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Ergonomically designed modern hospital patient room featuring a high-quality electric bed and contemporary clinical furniture. The room is decorated in soft neutral tones of slate and white with natural light coming from a large window. The mood is calm and professional, focusing on patient comfort and high-end hospital hospitality standards." src="https://lh3.googleusercontent.com/aida-public/AB6AXuArTW8gp5pSWW2phfTAMjB-VMIpU3a0KjF_v9elagLGZwtb1RGsHT3VYw-q9aIUH9U0GfEQJe1a9d-8RhRBIKJKwH5OmrdnNTx4bWUzzFltO6xG9ArA0zHAoNexyaX4pnwRbISazyn_8x6Ej1tuZQoInSr405XrcMY7mav_m6SqYa3RB3yDo3FNlZd8Eb-uG4LsEStfDk8x4RBSB8RM6g852zIdXXFPK2uIYLMvsR0oAilnaoL01bqjlaa-dbShxpF5YpzK-U5zWEE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-8 flex flex-col justify-end">
+<h3 class="text-white font-headline-md text-headline-md mb-2">Hospital Furniture</h3>
+<p class="text-white/80 font-body-md">Ergonomic patient beds and clinical storage.</p>
+</div>
+</div>
+<div class="md:col-span-2 group relative overflow-hidden rounded-2xl bg-surface-dim reveal-up">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A specialized laboratory space within a medical facility showing diagnostic equipment and sterile workstations. The color scheme is predominantly white with sharp blue accents, lit by cool daylight LEDs. The setting is highly organized and professional, reflecting a scientific and precise approach to healthcare diagnostics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiDw3htgqZ-IQxOZYntUa9UkIqpvk1RwTEJb8iJ7DfoWBPVpJRGurv_YRvU_YIhGqbX9cZb9gdA4MbPuILkHVdGMYAEwqZtUPgzQafXmqxFF6lI5t3LhbUS-1z7b5h0NURyB44R_-vwQ7K-OTncxlcn3JXbrwW95HU7vFnx_oNbfP7AVd8ODyGE3pZ3ZXucWH6dFXVZSyIcs0gTbqhhOTi4Q4puSKijlkLHsXxA5pNR11ps9XTXJz8Pp5qnXwBeKNVJVcj27Clcqo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-8 flex flex-col justify-end">
+<h3 class="text-white font-headline-md text-headline-md mb-2">Specialized Diagnostics</h3>
+<p class="text-white/80 font-body-md max-w-md">Precision imaging and laboratory diagnostics for accurate medical results.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Project Showcase -->
+<section class="py-24 bg-surface" id="projects">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-16 reveal-up">
+<h2 class="font-headline-lg text-headline-lg text-primary">Successful Healthcare Installations</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-4">Witness the scale of our impact across the nation's leading medical institutions.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="reveal-up">
+<div class="aspect-video rounded-xl overflow-hidden mb-4 shadow-lg group">
+<img alt="ICU Installation" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoCHAk8a6oZr_TrIsXejTj1MUNaU2wsozsw7gpOa4bzqE5sgyZSN-c9Yz8E743DBzTr5pgqq7H20HMBRfKyMvCuo84zKFAqq6KpTgvRIVQpfdTxwxUoGDEGefcfeKsI8ylGM0EKPdNxyqULHnsv6188vgoFDeF5b2yAonUxkPzsMuQlPAShBRiOqcn04Dyqn0smbbT8tonQiCuS2yMJevEp1d3AGjJ1NKND628czqba_X_GTl2zdj2gciFyi8v4vN87PtFu2UtdOQ"/>
+</div>
+<h4 class="font-label-md text-label-md text-primary">State-of-the-Art ICU Unit</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Central Hospital, Metro City</p>
+</div>
+<div class="reveal-up delay-100">
+<div class="aspect-video rounded-xl overflow-hidden mb-4 shadow-lg group">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Wide angle view of a newly completed modular operation theater featuring advanced medical lighting and integrated monitors on articulating arms. The floor is seamless blue vinyl flooring and the walls are pristine white. The scene is illuminated by recessed cool lighting, creating a high-end sterile and professional environment for complex surgical procedures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNTFp1wEc6j1V1axTgoI-z7nMw4UgBnP8LpjyT1Bro9MsCfmhQ27xvjGtim5l115APa-uJ5F0aRmJ2o-YjOdZV3WPLmXY_jmhwJOuxedPQZDvZRSy33SH0ItAqwITn8OH70xzKOIlWoJokLEDzyxU9tL_brKi7UpF8Y3GfmloXvLuNOmh79mPbA7XeaWEFLqN1cB6CNNsLLaj0OsAbgoq5itw9Gt6GJ4V40jvX0QHRA-z6KKUeuKVhl7Dw4s68XYVDPqpwXt2cYOc"/>
+</div>
+<h4 class="font-label-md text-label-md text-primary">Modular OT Complex</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Sunrise Multi-Specialty Clinic</p>
+</div>
+<div class="reveal-up delay-200">
+<div class="aspect-video rounded-xl overflow-hidden mb-4 shadow-lg group">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A high-end neonatal intensive care unit (NICU) with several advanced incubators lined up in a calm, soft-lit medical bay. The walls feature gentle murals and the flooring is a clean high-grade vinyl. The atmosphere is serene and protective, highlighting the company's commitment to specialized healthcare infrastructure for sensitive medical needs." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCifnIlv7MuwMfQ2jmTN-CVWGIbxciNe3gyIfvDuIZZAM-lvLbDLyCFY8XikdrBhp40q16QfBt-MyisQ5tZ7pywJxTBGp9-APma0YodE-pHUp8RaTkEi6CKbGI_n8AVThgwUEYTS472zKErjAl4bD9Ecxwhgf0ul7LZQmnjZc2_dnd-XmdCZMhEeNLf1DwRYpw__vqQQHP-U5ZobUsSX1KeUva_fmQtode0nfo9IxIPGrOsu9xirmVPYoQlb2iK6bilglVMLQvIstQ"/>
+</div>
+<h4 class="font-label-md text-label-md text-primary">NICU Facility Development</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Apex Children's Hospital</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Choose Us -->
+<section class="py-24 bg-primary text-white" id="trust">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div class="reveal-up">
+<h2 class="font-headline-lg text-headline-lg mb-8">Why Healthcare Institutions Trust Medicare Systems</h2>
+<p class="font-body-lg text-body-lg opacity-80 mb-12">We bridge the gap between complex medical technology and effortless clinical workflow.</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+<div class="flex items-start gap-4">
+<div class="text-secondary-fixed text-4xl"><span class="material-symbols-outlined" style="font-size: 40px;">groups</span></div>
+<div>
+<h4 class="font-label-md text-label-md">Skilled Team</h4>
+<p class="text-sm opacity-70">Certified bio-medical engineers and technicians.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="text-secondary-fixed text-4xl"><span class="material-symbols-outlined" style="font-size: 40px;">bolt</span></div>
+<div>
+<h4 class="font-label-md text-label-md">Fast Support</h4>
+<p class="text-sm opacity-70">Critical response within 4 hours for downtime.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="text-secondary-fixed text-4xl"><span class="material-symbols-outlined" style="font-size: 40px;">workspace_premium</span></div>
+<div>
+<h4 class="font-label-md text-label-md">Certified Quality</h4>
+<p class="text-sm opacity-70">ISO 9001 and CE compliant product range.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="text-secondary-fixed text-4xl"><span class="material-symbols-outlined" style="font-size: 40px;">payments</span></div>
+<div>
+<h4 class="font-label-md text-label-md">Competitive Value</h4>
+<p class="text-sm opacity-70">Unmatched ROI on long-term infrastructure.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="reveal-up lg:pl-12">
+<div class="bg-white/10 backdrop-blur-md rounded-2xl p-10 border border-white/20">
+<div class="flex gap-1 text-secondary-fixed mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-lg text-body-lg italic mb-6">"Medicare Systems provided us with a seamless ICU setup. Their technical team's precision during installation and their subsequent maintenance support have been exemplary. A truly professional partner."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center font-bold">DR</div>
+<div>
+<p class="font-label-md text-label-md">Dr. Rajesh Varma</p>
+<p class="text-sm opacity-70">Director, City Care Hospital</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Form Section -->
+<section class="py-24 bg-white relative" id="contact">
+<div class="max-w-[1000px] mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="bg-surface-container-low rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row reveal-up">
+<div class="bg-secondary p-12 text-white md:w-1/3 flex flex-col justify-between">
+<div>
+<h2 class="font-headline-lg text-headline-lg mb-6">Get in Touch</h2>
+<p class="font-body-md opacity-80 mb-10">Start your healthcare transformation today. Our consultants are ready to assist you.</p>
+</div>
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined">call</span>
+<span>+91 (800) 123-4567</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined">mail</span>
+<span>info@medicaresystems.com</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined">location_on</span>
+<span>Healthcare Park, Mumbai, India</span>
+</div>
+</div>
+</div>
+<div class="p-12 flex-1">
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-2">Full Name</label>
+<input class="w-full bg-white border border-outline-variant/50 rounded-lg p-3 focus:ring-2 focus:ring-primary/20 outline-none transition-all" type="text"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-2">Hospital Name</label>
+<input class="w-full bg-white border border-outline-variant/50 rounded-lg p-3 focus:ring-2 focus:ring-primary/20 outline-none transition-all" type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-2">Phone Number</label>
+<input class="w-full bg-white border border-outline-variant/50 rounded-lg p-3 focus:ring-2 focus:ring-primary/20 outline-none transition-all" type="tel"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-2">Email Address</label>
+<input class="w-full bg-white border border-outline-variant/50 rounded-lg p-3 focus:ring-2 focus:ring-primary/20 outline-none transition-all" type="email"/>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-2">Service Interested In</label>
+<select class="w-full bg-white border border-outline-variant/50 rounded-lg p-3 focus:ring-2 focus:ring-primary/20 outline-none transition-all">
+<option>ICU Solutions</option>
+<option>OT Modular Setup</option>
+<option>Medical Equipment Sales</option>
+<option>Hospital Infrastructure Consulting</option>
+</select>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-2">Your Message</label>
+<textarea class="w-full bg-white border border-outline-variant/50 rounded-lg p-3 focus:ring-2 focus:ring-primary/20 outline-none transition-all" rows="4"></textarea>
+</div>
+<button class="w-full bg-primary text-white py-4 rounded-lg font-label-md hover:bg-primary/90 transition-all shadow-lg">Send Inquiry</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer Shell -->
+<footer class="bg-tertiary-fixed dark:bg-tertiary-container text-on-tertiary-fixed dark:text-on-tertiary-container w-full pt-16 pb-8 border-t border-outline-variant dark:border-outline-variant/30">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-max-width mx-auto px-margin-desktop">
+<div class="col-span-1 md:col-span-1">
+<img alt="Medicare Systems" class="h-16 w-auto object-contain mb-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrPuz5MrrRq6rVG8V9RuiLJPXuBZVO9dgraGqROwaif4hLxbOSWEPCYEgn6EMB0OBs-BtoNz8QRUGuBbG0BppcgjTUxNJ_nqppusoy7Pk-0zpQPijY428wlLS9w8bjPavNoyNXTbMqd5faPT5UFo4pNwlEUPxZau2yaWqQqb-CnXyGE9MdFrcHEAaKUbHVt3xnezNhG4ogunpgR6FsWfUh9rDsKT1LsEsLBdApFe3trvXoPyKVmXUtTFmDPHHge2FLc32hXzt4Mpo"/>
+<p class="font-body-md text-body-md text-on-tertiary-fixed-variant mb-6">Empowering Healthcare Through Quality Equipment &amp; Reliable Service. Precision in every heartbeat.</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">face_nod</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">public</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">shield_with_house</span>
+</div>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary dark:text-primary-fixed-dim font-bold mb-6">Services</h4>
+<ul class="space-y-3 font-body-md text-body-md">
+<li><a class="text-on-tertiary-fixed-variant hover:text-on-tertiary-fixed hover:underline transition-all" href="#">Modular OT Setup</a></li>
+<li><a class="text-on-tertiary-fixed-variant hover:text-on-tertiary-fixed hover:underline transition-all" href="#">ICU Infrastructure</a></li>
+<li><a class="text-on-tertiary-fixed-variant hover:text-on-tertiary-fixed hover:underline transition-all" href="#">Medical Equipment Sale</a></li>
+<li><a class="text-on-tertiary-fixed-variant hover:text-on-tertiary-fixed hover:underline transition-all" href="#">Service Maintenance</a></li>
+<li><a class="text-on-tertiary-fixed-variant hover:text-on-tertiary-fixed hover:underline transition-all" href="#">Equipment Rental</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary dark:text-primary-fixed-dim font-bold mb-6">Quick Links</h4>
+<ul class="space-y-3 font-body-md text-body-md">
+<li><a class="text-on-tertiary-fixed-variant hover:text-on-tertiary-fixed hover:underline transition-all" href="#">Privacy Policy</a></li>
+<li><a class="text-on-tertiary-fixed-variant hover:text-on-tertiary-fixed hover:underline transition-all" href="#">Terms of Service</a></li>
+<li><a class="text-on-tertiary-fixed-variant hover:text-on-tertiary-fixed hover:underline transition-all" href="#">Compliance</a></li>
+<li><a class="text-on-tertiary-fixed-variant hover:text-on-tertiary-fixed hover:underline transition-all" href="#">Global Support</a></li>
+<li><a class="text-on-tertiary-fixed-variant hover:text-on-tertiary-fixed hover:underline transition-all" href="#">Careers</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary dark:text-primary-fixed-dim font-bold mb-6">Newsletter</h4>
+<p class="text-sm mb-4">Stay updated with healthcare innovations.</p>
+<div class="flex">
+<input class="bg-white/50 border-none rounded-l-lg p-3 w-full focus:ring-0" placeholder="Your email" type="text"/>
+<button class="bg-primary text-white p-3 rounded-r-lg"><span class="material-symbols-outlined">send</span></button>
+</div>
+</div>
+</div>
+<div class="max-w-max-width mx-auto px-margin-desktop mt-16 pt-8 border-t border-outline-variant/30 text-center">
+<p class="font-body-md text-body-md text-on-tertiary-fixed-variant/60">© 2024 Medicare Systems. All rights reserved. Precision in Healthcare.</p>
+</div>
+</footer>
+<script>
+        // Scroll Reveal Implementation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-up').forEach((el) => {
+            observer.observe(el);
+        });
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-2', 'shadow-md');
+                nav.classList.remove('h-20');
+            } else {
+                nav.classList.remove('py-2', 'shadow-md');
+                nav.classList.add('h-20');
+            }
+        });
+    </script>
+</body></html>
